@@ -15,13 +15,15 @@ export default function Banner(){
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
     width: '100%',
-    aspectRatio: 1,
     maxHeight: 300,
     borderWidth: 1,
     backgroundColor: 'black',
+  },
+  imageContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   imagem: {
     width: '100%',

@@ -13,6 +13,7 @@ export default function Header(){
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 30,
         flexDirection: 'row',
         backgroundColor: 'black',
         padding: 10,

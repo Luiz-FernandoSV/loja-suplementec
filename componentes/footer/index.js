@@ -22,6 +22,7 @@ export default function Footer() {
 
 const styles = StyleSheet.create({
     container: {
+        marginBottom: 20,
         flexDirection: 'column',
         backgroundColor: 'black',
         padding: 10,

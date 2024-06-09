@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 
 export default function CardProduto({ produto }) {
 
+    const navigation = useNavigation();
+
     return (
-        <View style={styles.container} >
+        <TouchableOpacity style={styles.container} onPress={() =>navigation.navigate('Produto', { produto: produto })} >
             <Text style={styles.marca}>{produto.marca}</Text>
             <Image source={{ uri: produto.imagem }} style={styles.imagem} />
             <View style={styles.conteudo}>
@@ -13,7 +16,7 @@ export default function CardProduto({ produto }) {
                 <Text style={styles.descricao}>{produto.descricao}</Text>
                 <Text style={styles.quantidade}>{produto.quantidade}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 };
 
@@ -32,7 +35,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 2,
         elevation: 3,
-        width: '50%', // Alterei para um valor numérico
+        width: '50%'
     },
     imagem: {
         width: '90%',
@@ -41,30 +44,30 @@ const styles = StyleSheet.create({
     },
     conteudo: {
         flex: 1,
-        marginLeft: 10,
+        marginLeft: 10
     },
     marca: {
         fontSize: 16,
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom: 5
     },
     nome: {
         fontSize: 14,
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom: 5
     },
     preco: {
         fontSize: 16,
         fontWeight: 'bold',
         color: '#27ae60',
-        marginBottom: 5,
+        marginBottom: 5
     },
     descricao: {
         fontSize: 14,
-        marginBottom: 5,
+        marginBottom: 5
     },
     quantidade: {
         fontSize: 12,
-        color: '#95a5a6',
+        color: '#95a5a6'
     },
 });
